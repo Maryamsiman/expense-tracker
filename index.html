@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 My Expense Tracker</h1>
+        
+        <div class="currency-selector">
+            <label for="default-currency">Default Currency:</label>
+            <select id="default-currency">
+                <option value="INR">₹ Indian Rupee (INR)</option>
+                <option value="USD">$ US Dollar (USD)</option>
+                <option value="EUR">€ Euro (EUR)</option>
+                <option value="GBP">£ British Pound (GBP)</option>
+                <option value="JPY">¥ Japanese Yen (JPY)</option>
+                <option value="AUD">A$ Australian Dollar (AUD)</option>
+                <option value="CAD">C$ Canadian Dollar (CAD)</option>
+            </select>
+        </div>
+        
+        <div class="total">
+            <h2>Total Spent: <span id="currency-symbol">₹</span><span id="total-amount">0.00</span></h2>
+        </div>
+
+        <form id="expense-form">
+            <input type="text" id="description" placeholder="What did you buy?" required>
+            
+            <div class="amount-currency-row">
+                <input type="number" id="amount" placeholder="How much?" step="0.01" required>
+                <select id="expense-currency">
+                    <option value="INR">₹ INR</option>
+                    <option value="USD">$ USD</option>
+                    <option value="EUR">€ EUR</option>
+                    <option value="GBP">£ GBP</option>
+                    <option value="JPY">¥ JPY</option>
+                    <option value="AUD">A$ AUD</option>
+                    <option value="CAD">C$ CAD</option>
+                </select>
+            </div>
+            
+            <select id="category" required>
+                <option value="">Choose category</option>
+                <option value="food">🍔 Food & Dining</option>
+                <option value="transport">🚗 Transportation</option>
+                <option value="entertainment">🎬 Entertainment</option>
+                <option value="shopping">🛍️ Shopping</option>
+                <option value="bills">📄 Bills & Utilities</option>
+                <option value="health">🏥 Healthcare</option>
+                <option value="education">📚 Education</option>
+                <option value="other">📦 Other</option>
+            </select>
+            
+            <input type="date" id="date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="filters">
+            <select id="currency-filter">
+                <option value="">All Currencies</option>
+                <option value="INR">₹ INR Only</option>
+                <option value="USD">$ USD Only</option>
+                <option value="EUR">€ EUR Only</option>
+                <option value="GBP">£ GBP Only</option>
+                <option value="JPY">¥ JPY Only</option>
+                <option value="AUD">A$ AUD Only</option>
+                <option value="CAD">C$ CAD Only</option>
+            </select>
+            
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="food">Food & Dining</option>
+                <option value="transport">Transportation</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="shopping">Shopping</option>
+                <option value="bills">Bills & Utilities</option>
+                <option value="health">Healthcare</option>
+                <option value="education">Education</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div id="expense-list"></div>
+        
+        <div class="currency-totals" id="currency-totals"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
