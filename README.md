@@ -15,26 +15,7 @@ A simple and beautiful web app to track your expenses, budgets, and visualize sp
 
 ---
 
-## 🚀 Live Demo
-👉 [Open App](https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/)  
-
----
-
-## 🖼 Screenshots
-_Add your screenshots here (optional)_  
-Example:  
-![App Screenshot](screenshot.png)
-
----
-
 ## 🛠️ Tech Stack
 - HTML, CSS, JavaScript  
 - Chart.js (for charts)  
 - Local Storage (for saving data)  
-
----
-
-## 📦 How to Use
-1. Clone this repo:  
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
