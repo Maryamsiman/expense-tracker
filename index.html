@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
+    <title>Expense Tracker Pro</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -25,6 +26,25 @@
         
         <div class="total">
             <h2>Total Spent: <span id="currency-symbol">₹</span><span id="total-amount">0.00</span></h2>
+        </div>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <h3>💰 Monthly Budget</h3>
+            <div class="budget-controls">
+                <input type="number" id="budget-amount" placeholder="Set monthly budget" step="100">
+                <button id="set-budget-btn">Set Budget</button>
+            </div>
+            <div class="budget-display" id="budget-display" style="display: none;">
+                <div class="budget-info">
+                    <span>Budget: <span id="budget-limit">₹0</span></span>
+                    <span>Remaining: <span id="budget-remaining">₹0</span></span>
+                </div>
+                <div class="budget-bar">
+                    <div class="budget-progress" id="budget-progress"></div>
+                </div>
+                <div class="budget-status" id="budget-status"></div>
+            </div>
         </div>
 
         <form id="expense-form">
@@ -59,6 +79,11 @@
             <button type="submit">Add Expense</button>
         </form>
 
+        <!-- Export Button -->
+        <div class="export-section">
+            <button id="export-btn">📊 Export to Excel</button>
+        </div>
+
         <div class="filters">
             <select id="currency-filter">
                 <option value="">All Currencies</option>
@@ -82,6 +107,19 @@
                 <option value="education">Education</option>
                 <option value="other">Other</option>
             </select>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <div class="chart-container">
+                <h3>📊 Spending by Category</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h3>📈 Monthly Spending Trend</h3>
+                <canvas id="monthlyChart"></canvas>
+            </div>
         </div>
 
         <div id="expense-list"></div>
