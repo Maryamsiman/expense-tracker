@@ -175,7 +175,7 @@ Community Feedback - Thanks to everyone who tested and provided feedback
 Having issues? Found a bug? Want to request a feature?
 
 Create an Issue: GitHub Issues
-Email Support: your.email@example.com
+Email Support: maryamsiman584@gmail.com
 Documentation: Check this README for common questions
 
 🎉 Show Your Support
