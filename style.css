@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -50,6 +50,77 @@ h1 {
     font-size: 1.8em;
 }
 
+.budget-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.budget-section h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.budget-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.budget-controls input {
+    flex: 1;
+}
+
+.budget-display {
+    margin-top: 15px;
+}
+
+.budget-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.budget-bar {
+    background: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.budget-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #f39c12, #e74c3c);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.budget-status {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.budget-status.good {
+    background: #d4edda;
+    color: #155724;
+}
+
+.budget-status.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.budget-status.danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
 form {
     display: grid;
     gap: 15px;
@@ -62,12 +133,21 @@ form {
     gap: 10px;
 }
 
+.export-section {
+    margin-bottom: 20px;
+}
+
+.export-section button {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
 input, select, button {
     padding: 15px;
     border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 input:focus, select:focus {
@@ -88,6 +168,31 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.charts-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.chart-container h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.chart-container canvas {
+    max-height: 300px;
 }
 
 .filters {
@@ -178,9 +283,13 @@ button:hover {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .amount-currency-row,
     .filters {
+        grid-template-columns: 1fr;
+    }
+    
+    .charts-section {
         grid-template-columns: 1fr;
     }
     
